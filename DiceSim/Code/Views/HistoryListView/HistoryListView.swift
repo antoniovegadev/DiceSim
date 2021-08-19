@@ -15,7 +15,7 @@ struct HistoryListView: View {
     var body: some View {
         NavigationView {
             List(rolls) { roll in
-                HistoryRowView(roll: roll)
+                HistoryRowView(roll: roll, currDate: Date())
             }
             .navigationBarTitle("History")
         }
