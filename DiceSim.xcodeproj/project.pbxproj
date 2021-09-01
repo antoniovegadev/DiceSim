@@ -14,8 +14,9 @@
 		E22D13FC26CD927A00645D5D /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D13FB26CD927A00645D5D /* RollView.swift */; };
 		E22D13FE26CD928B00645D5D /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D13FD26CD928B00645D5D /* HistoryListView.swift */; };
 		E22D140226CD98E200645D5D /* DiceSim.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E22D140026CD98E200645D5D /* DiceSim.xcdatamodeld */; };
-		E22D140426CD9A5900645D5D /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D140326CD9A5900645D5D /* PersistenceController.swift */; };
+		E22D140426CD9A5900645D5D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D140326CD9A5900645D5D /* DataController.swift */; };
 		E22D140626CDA8CA00645D5D /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D140526CDA8CA00645D5D /* HistoryRowView.swift */; };
+		E238FF2126DEEE500033F5C1 /* Roll-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238FF2026DEEE500033F5C1 /* Roll-CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		E22D13FB26CD927A00645D5D /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		E22D13FD26CD928B00645D5D /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
 		E22D140126CD98E200645D5D /* DiceSim.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiceSim.xcdatamodel; sourceTree = "<group>"; };
-		E22D140326CD9A5900645D5D /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		E22D140326CD9A5900645D5D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		E22D140526CDA8CA00645D5D /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
+		E238FF2026DEEE500033F5C1 /* Roll-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roll-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +91,10 @@
 		E22D13F726CD906E00645D5D /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				E238FF1F26DEEE220033F5C1 /* Extensions */,
 				E22D13E726CD903C00645D5D /* DiceSimApp.swift */,
-				E22D140326CD9A5900645D5D /* PersistenceController.swift */,
-				E22D13FF26CD989400645D5D /* Models */,
+				E22D140326CD9A5900645D5D /* DataController.swift */,
+				E22D140026CD98E200645D5D /* DiceSim.xcdatamodeld */,
 				E22D13F826CD907300645D5D /* Views */,
 			);
 			path = Code;
@@ -101,35 +104,35 @@
 			isa = PBXGroup;
 			children = (
 				E22D13E926CD903C00645D5D /* ContentView.swift */,
-				E22D13F926CD923E00645D5D /* RollView */,
-				E22D13FA26CD925700645D5D /* HistoryListView */,
+				E22D13F926CD923E00645D5D /* Roll */,
+				E22D13FA26CD925700645D5D /* History */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E22D13F926CD923E00645D5D /* RollView */ = {
+		E22D13F926CD923E00645D5D /* Roll */ = {
 			isa = PBXGroup;
 			children = (
 				E22D13FB26CD927A00645D5D /* RollView.swift */,
 			);
-			path = RollView;
+			path = Roll;
 			sourceTree = "<group>";
 		};
-		E22D13FA26CD925700645D5D /* HistoryListView */ = {
+		E22D13FA26CD925700645D5D /* History */ = {
 			isa = PBXGroup;
 			children = (
 				E22D13FD26CD928B00645D5D /* HistoryListView.swift */,
 				E22D140526CDA8CA00645D5D /* HistoryRowView.swift */,
 			);
-			path = HistoryListView;
+			path = History;
 			sourceTree = "<group>";
 		};
-		E22D13FF26CD989400645D5D /* Models */ = {
+		E238FF1F26DEEE220033F5C1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E22D140026CD98E200645D5D /* DiceSim.xcdatamodeld */,
+				E238FF2026DEEE500033F5C1 /* Roll-CoreDataHelpers.swift */,
 			);
-			path = Models;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +205,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E22D13FC26CD927A00645D5D /* RollView.swift in Sources */,
+				E238FF2126DEEE500033F5C1 /* Roll-CoreDataHelpers.swift in Sources */,
 				E22D13FE26CD928B00645D5D /* HistoryListView.swift in Sources */,
 				E22D13EA26CD903C00645D5D /* ContentView.swift in Sources */,
-				E22D140426CD9A5900645D5D /* PersistenceController.swift in Sources */,
+				E22D140426CD9A5900645D5D /* DataController.swift in Sources */,
 				E22D140226CD98E200645D5D /* DiceSim.xcdatamodeld in Sources */,
 				E22D140626CDA8CA00645D5D /* HistoryRowView.swift in Sources */,
 				E22D13E826CD903C00645D5D /* DiceSimApp.swift in Sources */,

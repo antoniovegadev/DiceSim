@@ -10,15 +10,21 @@ import SwiftUI
 @main
 struct DiceSimApp: App {
     @Environment(\.scenePhase) var scenePhase
-    let persistenceController = PersistenceController.shared
+    @StateObject var dataController: DataController
+
+    init() {
+        let dataController = DataController()
+        _dataController = StateObject(wrappedValue: dataController)
+    }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(dataController)
         }
         .onChange(of: scenePhase) { _ in
-            persistenceController.save()
+            dataController.save()
         }
     }
 }
