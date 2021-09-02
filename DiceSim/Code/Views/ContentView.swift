@@ -15,6 +15,7 @@ struct ContentView: View {
                     Image(systemName: "die.face.6.fill")
                     Text("Roll")
                 }
+            
             HistoryListView()
                 .tabItem {
                     Image(systemName: "book.closed.fill")

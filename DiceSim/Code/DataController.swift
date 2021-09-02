@@ -59,8 +59,30 @@ class DataController: ObservableObject {
 
     func createSampleData() throws {
         let viewContext = container.viewContext
-    
-        for _ in 1...8 {
+
+        let game = Game(context: viewContext)
+        game.title = "Monopoly"
+        game.datePlayed = Date()
+
+        let names = ["Antonio", "Braulio", "Eduardo", "Yajaira"]
+
+        for i in 0..<4 {
+            let player = Player(context: viewContext)
+            player.name = names[i]
+            player.color = Player.colors[i]
+            player.game = game
+
+            for _ in 1...8 {
+                let roll = Roll(context: viewContext)
+                roll.id = UUID()
+                roll.die1 = Int16.random(in: 1...6)
+                roll.die2 = Int16.random(in: 1...6)
+                roll.date = Date()
+                roll.player = player
+            }
+        }
+
+        for _ in 0..<8 {
             let roll = Roll(context: viewContext)
             roll.id = UUID()
             roll.die1 = Int16.random(in: 1...6)
@@ -69,6 +91,18 @@ class DataController: ObservableObject {
         }
 
         try viewContext.save()
+    }
+
+    func addPlayer(to game: Game) {
+        let viewContext = container.viewContext
+
+        let index = game.gamePlayers.count
+        let player = Player(context: viewContext)
+        player.name = "Player \(index + 1)"
+        player.color = Player.colors[index]
+        player.game = game
+
+        save()
     }
 
     func save() {

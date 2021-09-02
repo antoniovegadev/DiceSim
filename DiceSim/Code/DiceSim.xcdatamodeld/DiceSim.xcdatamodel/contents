@@ -19,8 +19,8 @@
         <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="rolls" inverseEntity="Player"/>
     </entity>
     <elements>
-        <element name="Roll" positionX="-63" positionY="-18" width="128" height="104"/>
         <element name="Game" positionX="-36" positionY="36" width="128" height="74"/>
         <element name="Player" positionX="-9" positionY="45" width="128" height="89"/>
+        <element name="Roll" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>
