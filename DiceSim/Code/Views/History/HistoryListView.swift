@@ -59,11 +59,20 @@ struct HistoryListView: View {
                 }
             }
             .navigationTitle("History")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        showingDeleteConfirmationAlert = true
+                    } label: {
+                        Image(systemName: "trash")
+                    }
+                }
+            }
         }
         .accentColor(.red)
         .alert(isPresented: $showingDeleteConfirmationAlert) {
             Alert(
-                title: Text("Delete History"),
+                title: Text("Delete History?"),
                 message: Text("Are you sure you want to delete the current history?"),
                 primaryButton: .destructive(Text("Delete"), action: dataController.deleteAll),
                 secondaryButton: .cancel()

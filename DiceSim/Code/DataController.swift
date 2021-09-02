@@ -115,8 +115,8 @@ class DataController: ObservableObject {
         container.viewContext.delete(object)
     }
 
-    func deleteAll() {
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Roll")
+    private func batchDelete(_ entityName: String) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entityName)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         deleteRequest.resultType = .resultTypeObjectIDs
 
@@ -127,5 +127,13 @@ class DataController: ObservableObject {
         let deletedObjects: [AnyHashable: Any] = [NSDeletedObjectsKey: deleteResult]
 
         NSManagedObjectContext.mergeChanges(fromRemoteContextSave: deletedObjects, into: [container.viewContext])
+    }
+
+    func deleteAll() {
+        let entities = ["Roll", "Player", "Game"]
+
+        for entity in entities {
+            batchDelete(entity)
+        }
     }
 }

@@ -41,7 +41,7 @@ struct GameView: View {
                         .font(.headline)
                         .padding([.horizontal], 10)
                         .padding([.vertical], 5)
-                        .foregroundColor(index == selected ? .white : .black)
+                        .foregroundColor(index == selected ? .white : .primary)
                         .background(index == selected ? Color(game.gamePlayers[index].playerColor) : Color.clear)
                         .clipShape(Capsule())
                         .padding(3)
@@ -120,6 +120,7 @@ struct GameView_Previews: PreviewProvider {
 
     static var previews: some View {
         GameView()
+            .preferredColorScheme(.dark)
             .environment(\.managedObjectContext, dataController.container.viewContext)
             .environmentObject(dataController)
     }
