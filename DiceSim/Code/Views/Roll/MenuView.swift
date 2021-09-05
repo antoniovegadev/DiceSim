@@ -18,12 +18,14 @@ struct MenuView: View {
             } label: {
                 Text("Game Mode")
             }
+            .buttonStyle(AppleButtonStyle(color: .blue))
 
             Button {
                 mode = .solo
             } label: {
                 Text("Solo Mode")
             }
+            .buttonStyle(AppleButtonStyle(color: .blue))
         }
     }
 }

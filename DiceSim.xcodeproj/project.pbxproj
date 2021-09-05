@@ -30,6 +30,7 @@
 		E238FF3B26E061420033F5C1 /* GameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238FF3A26E061410033F5C1 /* GameRowView.swift */; };
 		E238FF3D26E07A850033F5C1 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238FF3C26E07A840033F5C1 /* GameDetailView.swift */; };
 		E238FF3F26E081B20033F5C1 /* GameRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238FF3E26E081B20033F5C1 /* GameRollView.swift */; };
+		E2C6B43626E55C13004AB709 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6B43526E55C13004AB709 /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		E238FF3A26E061410033F5C1 /* GameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRowView.swift; sourceTree = "<group>"; };
 		E238FF3C26E07A840033F5C1 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
 		E238FF3E26E081B20033F5C1 /* GameRollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRollView.swift; sourceTree = "<group>"; };
+		E2C6B43526E55C13004AB709 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				E238FF2826DF26C20033F5C1 /* Game-CoreDataHelpers.swift */,
 				E238FF2A26DF27600033F5C1 /* Player-CoreDataHelpers.swift */,
 				E238FF2026DEEE500033F5C1 /* Roll-CoreDataHelpers.swift */,
+				E2C6B43526E55C13004AB709 /* Button.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				E238FF2126DEEE500033F5C1 /* Roll-CoreDataHelpers.swift in Sources */,
 				E238FF3926E02ECC0033F5C1 /* GameView.swift in Sources */,
 				E22D13FE26CD928B00645D5D /* HistoryListView.swift in Sources */,
+				E2C6B43626E55C13004AB709 /* Button.swift in Sources */,
 				E22D13EA26CD903C00645D5D /* ContentView.swift in Sources */,
 				E238FF2326DF15180033F5C1 /* MenuView.swift in Sources */,
 				E238FF3126DFF7170033F5C1 /* PlayerRowView.swift in Sources */,
