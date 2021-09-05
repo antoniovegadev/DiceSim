@@ -68,18 +68,15 @@ struct GameView: View {
 
             Spacer()
 
-            Button(action: rollDice) {
+            Button {
+                rollDice()
+            } label: {
                 Text("Roll")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.white)
-                    .frame(width: 150, height: 60)
-                    .background(Color.blue)
-                    .clipShape(Capsule())
             }
-            .offset(y: -20)
+            .buttonStyle(AppleButtonStyle(color: .blue))
             .opacity(rolling ? 0.5 : 1.0)
             .allowsHitTesting(!rolling)
+            .padding()
         }
     }
 

@@ -20,15 +20,14 @@ struct RollView: View {
     @State private var mode: Mode = .menu
     @State private var showingChangeToMenuAlert = false
     @State private var showingCreateGameSheet = false
-
-    @FetchRequest(entity: Game.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Game.datePlayed, ascending: false)]) var game: FetchedResults<Game>
+    @State private var newGame: Game? = nil
     
     var body: some View {
         NavigationView {
             Group {
                 switch mode {
                 case .menu:
-                    MenuView(mode: $mode, createGame: $showingCreateGameSheet)
+                    MenuView(mode: $mode, game: $newGame)
                 case .solo:
                     SoloView()
                 case .game:
@@ -55,9 +54,9 @@ struct RollView: View {
                 secondaryButton: .cancel()
             )
         }
-        .sheet(isPresented: $showingCreateGameSheet) {
+        .sheet(item: $newGame) { game in
             NavigationView {
-                CreateGameView(game: Game(context: managedObjectContext), mode: $mode)
+                CreateGameView(game: game, mode: $mode)
             }
         }
     }

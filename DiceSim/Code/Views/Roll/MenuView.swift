@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct MenuView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var dataController: DataController
+
     @Binding var mode: Mode
-    @Binding var createGame: Bool
+    @Binding var game: Game?
 
     var body: some View {
         VStack(spacing: 10) {
             Button {
-                createGame = true
+                createGame()
             } label: {
                 Text("Game Mode")
             }
@@ -28,10 +31,18 @@ struct MenuView: View {
             .buttonStyle(AppleButtonStyle(color: .blue))
         }
     }
+
+    func createGame() {
+        let game = Game(context: managedObjectContext)
+        dataController.addPlayer(to: game)
+        dataController.addPlayer(to: game)
+        self.game = game
+    }
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(mode: .constant(.menu), createGame: .constant(false))
+//        MenuView(mode: .constant(.menu), createGame: .constant(false))
+        MenuView(mode: .constant(.menu), game: .constant(Game()))
     }
 }
