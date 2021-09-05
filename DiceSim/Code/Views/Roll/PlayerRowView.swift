@@ -12,12 +12,13 @@ struct PlayerRowView: View {
 
     var body: some View {
         HStack {
-            Circle()
-                .foregroundColor(Color(player.playerColor))
-                .frame(width: 18, height: 18)
-//                .padding()
-
-            Text(player.playerName)
+            Label(
+                title: { Text(player.playerName) },
+                icon: {
+                    Image(systemName: "circle.fill")
+                        .foregroundColor(Color(player.playerColor))
+                }
+            )
 
             Spacer()
         }

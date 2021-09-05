@@ -31,10 +31,12 @@ struct CreateGameView: View {
                 }
 
                 if game.gamePlayers.count < 4 {
-                    Button("Add Player") {
+                    Button {
                         withAnimation {
                             dataController.addPlayer(to: game)
                         }
+                    } label: {
+                        Label("Add player", systemImage: "person.badge.plus")
                     }
                 }
             }

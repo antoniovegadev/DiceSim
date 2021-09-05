@@ -118,10 +118,10 @@
 		E22D13F726CD906E00645D5D /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				E238FF1F26DEEE220033F5C1 /* Extensions */,
 				E22D13E726CD903C00645D5D /* DiceSimApp.swift */,
 				E22D140326CD9A5900645D5D /* DataController.swift */,
 				E22D140026CD98E200645D5D /* DiceSim.xcdatamodeld */,
+				E238FF1F26DEEE220033F5C1 /* Extensions */,
 				E22D13F826CD907300645D5D /* Views */,
 			);
 			path = Code;
