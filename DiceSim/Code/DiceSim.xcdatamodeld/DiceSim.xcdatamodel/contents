@@ -7,6 +7,7 @@
     </entity>
     <entity name="Player" representedClassName="Player" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="players" inverseEntity="Game"/>
         <relationship name="rolls" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Roll" inverseName="player" inverseEntity="Roll"/>
@@ -20,7 +21,7 @@
     </entity>
     <elements>
         <element name="Game" positionX="-36" positionY="36" width="128" height="74"/>
-        <element name="Player" positionX="-9" positionY="45" width="128" height="89"/>
+        <element name="Player" positionX="-9" positionY="45" width="128" height="104"/>
         <element name="Roll" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

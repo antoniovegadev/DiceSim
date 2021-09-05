@@ -53,13 +53,13 @@ struct GameView: View {
             Spacer()
 
             HStack {
-                Image(systemName: "die.face.\(die1).fill")
+                Image(systemName: "die.face.\(die1)")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100)
                     .animation(.linear)
 
-                Image(systemName: "die.face.\(die2).fill")
+                Image(systemName: "die.face.\(die2)")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100)

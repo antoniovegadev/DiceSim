@@ -14,12 +14,12 @@ struct HistoryRowView: View {
     var body: some View {
         HStack {
             HStack {
-                Image(systemName: "die.face.\(roll.die1).fill")
+                Image(systemName: "die.face.\(roll.die1)")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 50)
                 
-                Image(systemName: "die.face.\(roll.die2).fill")
+                Image(systemName: "die.face.\(roll.die2)")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 50)

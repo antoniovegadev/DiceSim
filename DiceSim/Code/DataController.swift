@@ -100,6 +100,7 @@ class DataController: ObservableObject {
         let player = Player(context: viewContext)
         player.name = "Player \(index + 1)"
         player.color = Player.colors[index]
+        player.dateCreated = Date()
         player.game = game
 
         save()

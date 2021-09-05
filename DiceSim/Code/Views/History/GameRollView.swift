@@ -13,13 +13,13 @@ struct GameRollView: View {
     var body: some View {
         HStack {
             HStack {
-                Image(systemName: "die.face.\(roll.die1).fill")
+                Image(systemName: "die.face.\(roll.die1)")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 50)
                     .foregroundColor(Color(roll.rollPlayer.playerColor))
 
-                Image(systemName: "die.face.\(roll.die2).fill")
+                Image(systemName: "die.face.\(roll.die2)")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 50)

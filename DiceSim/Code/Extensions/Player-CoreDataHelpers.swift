@@ -32,6 +32,10 @@ extension Player {
         color ?? ""
     }
 
+    var playerDateCreated: Date {
+        dateCreated ?? Date()
+    }
+
     var playerRolls: [Roll] {
         let rolls = rolls?.allObjects as? [Roll] ?? []
         return rolls

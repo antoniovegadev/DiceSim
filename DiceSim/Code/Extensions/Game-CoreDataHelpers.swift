@@ -18,7 +18,7 @@ extension Game {
 
     var gamePlayers: [Player] {
         let players = players?.allObjects as? [Player] ?? []
-        return players.sorted { $0.playerName < $1.playerName }
+        return players.sorted { $0.playerDateCreated < $1.playerDateCreated }
     }
 
     var gameRolls: [Roll] {
